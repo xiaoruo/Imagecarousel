@@ -1,0 +1,117 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>轮播</title>
+<style>
+*{margin:0;padding:0;border: 0}
+ul{list-style-type:none;}
+#box{
+	position:relative;
+	width:680px;
+	height:325px;
+	background:#fff;
+	margin:20px;
+	cursor:pointer;
+	overflow: hidden;
+}
+#box .list{
+	position:relative;
+	width:1300px;
+	height:325px;
+	overflow: hidden;
+}
+.oList{
+	position:absolute;
+}
+#box .list a{
+	float: left;
+	width:680px;
+	height:325px;
+	overflow:hidden;
+}
+#box .theButton{
+	width: 60px;
+	height: 100px;
+	background-color: rgba(0,0,0,0.2);
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+	font-size: 5em;
+	color: red;
+	text-decoration: none;
+	line-height: 100px;
+	text-align: center;
+	display: none;
+	background-color: #000\9;
+	filter:alpha(opacity=20)\9;
+}
+#box .theButton span{
+	color: #fff;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+ #box:hover a.theButton{
+	display: block;
+}
+#box a.theButton:hover{
+	background-color: rgba(0,0,0,0.4);
+	filter:alpha(opacity=40)\9;
+}
+#box .button-right{
+	right: 0;
+}
+#box .count{
+	position:absolute;
+	left:50%;
+	margin-left: -50px;
+	bottom:10px;
+}
+#box .count li{
+	float:left;
+	width:15px;
+	height:15px;
+	cursor:pointer;
+	margin-right:5px;
+	overflow:hidden;
+	background:#fff;
+	opacity:0.7;
+	border-radius:20px;
+}
+#box .count li.current{
+	background:#00C7D3;
+}
+</style>
+</head>
+<body>
+<div id="box">
+    <div class="list">
+        <div class="oList">
+        	<a href="#"><img src="./images/first.jpg" /></a>
+	        <a href="#"><img src="./images/second.jpg" /></a>
+	        <a href="#"><img src="./images/third.jpg" /></a>
+	        <a href="#"><img src="./images/fourth.jpg" /></a>
+        </div>
+    </div>
+    <a href="javascript:void(0);" class="theButton button-left"><span>&lt;</span></a>
+    <a href="javascript:void(0);" class="theButton button-right"><span>&gt;</span></a>
+</div>
+<script type="text/javascript" src="./js/main.js"></script>
+<!--[if lt IE 7]>
+<script>
+	window.onload = function(){
+		var oBox = document.getElementById("box");
+		var oList = oBox.children[0].children[0];
+		var theButton = oBox.children;
+		oList.onmouseover = function(){
+			for(var i = 0;i<theButton.length;i++){
+				theButton[i].style.display = "block";
+			}
+		}
+	}
+</script>
+<![endif]-->
+</body>
+</html>
